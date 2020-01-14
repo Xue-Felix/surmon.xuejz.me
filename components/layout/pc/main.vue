@@ -1,13 +1,16 @@
 <template>
   <div id="app-main">
-    <header-view/>
+    <header-view />
     <client-only>
-      <background/>
+      <background />
       <wall-flower v-if="!onPowerSavingMode" />
       <language-psm v-if="isNotServicePage" />
       <wallpaper-switch v-if="isNotServicePage" />
       <theme-switch v-if="isNotServicePage && !onPowerSavingMode" />
-      <share-box v-if="isNotServicePage" class="sidebar-share" />
+      <share-box
+        v-if="isNotServicePage"
+        class="sidebar-share"
+      />
       <tool-box v-if="isNotFullColPage" />
     </client-only>
     <main
@@ -27,14 +30,27 @@
           'full-view': isFullViewWidth
         }"
       >
-        <nuxt :nuxtChildKey="$route.name" keep-alive />
+        <nuxt
+          :nuxtChildKey="$route.name"
+          keep-alive
+        />
       </div>
-      <aside-view key="aside" v-if="!isTwoColumns && !isThreeColumns" />
+      <aside-view 
+        v-if="!isTwoColumns && !isThreeColumns"
+        key="aside" 
+      />
     </main>
     <client-only>
-      <barrage v-if="isMountedBarrage" v-cloak/>
+      <barrage 
+        v-if="isMountedBarrage"
+        v-cloak
+      />
       <transition name="fade">
-        <webrtc key="webrtc" v-if="!onPowerSavingMode && onWebrtc" v-cloak/>
+        <webrtc 
+          v-if="!onPowerSavingMode && onWebrtc"
+          v-cloak
+          key="webrtc"
+        />
       </transition>
       <transition name="fade">
         <wallpaper-wall key="wallpaper-wall" v-if="onWallpaper" v-cloak/>
