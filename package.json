@@ -42,7 +42,7 @@
     "howler": "^2.1.2",
     "intersection-observer": "^0.7.0",
     "lozad": "^1.9.0",
-    "marked": "0.6.3",
+    "marked": "0.7.0",
     "node-uuid": "^1.4.8",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.10.0",
